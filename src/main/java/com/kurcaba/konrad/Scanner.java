@@ -33,6 +33,7 @@ public class Scanner extends javax.swing.JFrame {
         windowTitle = new javax.swing.JLabel();
         okButton = new javax.swing.JButton();
         inputField = new javax.swing.JTextField();
+        tipLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +53,8 @@ public class Scanner extends javax.swing.JFrame {
             }
         });
 
+        tipLabel.setText("Tip: barcodes exist in database - \"1\", \"2\", \"3\"");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,9 +65,12 @@ public class Scanner extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(inputField, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addComponent(okButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tipLabel)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(inputField, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)
+                        .addComponent(okButton)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -76,7 +82,9 @@ public class Scanner extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(okButton))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tipLabel)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,6 +106,7 @@ public class Scanner extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField inputField;
     private javax.swing.JButton okButton;
+    private javax.swing.JLabel tipLabel;
     private javax.swing.JLabel windowTitle;
     // End of variables declaration//GEN-END:variables
 }
